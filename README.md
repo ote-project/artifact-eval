@@ -52,10 +52,13 @@ To create a VM using this image:
 
 ## SSH into the VM
 
-SSH into the VM with:
+SSH into the VM using, for example, GCP's [SSH-in-browser feature](https://docs.cloud.google.com/compute/docs/connect/standard-ssh#console) or Google Cloud CLI's [`gcloud compute ssh` command](https://docs.cloud.google.com/sdk/gcloud/reference/compute/ssh).
 
-* Username: `ubuntu`
-* Password: `12345678`
+Then, switch to the `ubuntu` user:
+
+```bash
+sudo -iu ubuntu
+```
 
 ## Run the artifact
 
@@ -107,17 +110,7 @@ When the run completes, the script prints the path to a generated PDF containing
 Wrote: /home/ubuntu/dse/logs/ae-tables-20260507-092535/ae.pdf
 ```
 
-Download that PDF from the VM and inspect the tables.
-
-For example, from your local machine:
-
-```
-scp ubuntu@VM_EXTERNAL_IP:/home/ubuntu/dse/logs/ae-tables-20260507-092535/ae.pdf .
-```
-
-Replace the path with the exact path printed by the script.
-
-The final output is a PDF named `ae.pdf` containing the generated evaluation tables.
+Download that PDF from the VM and inspect the generated evaluation tables.
 
 ## Source code
 
